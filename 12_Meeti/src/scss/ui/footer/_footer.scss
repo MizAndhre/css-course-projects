@@ -1,0 +1,11 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.footer {
+	padding: 5rem 0 0;
+
+	&__copy {
+		padding: 1rem 0;
+		text-align: center;
+	}
+}

@@ -1,0 +1,25 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.sidebar {
+	grid-column: 3 / 4;
+
+	&__contenido {
+		background-color: v.$secundario;
+		color: v.$blanco;
+		padding: 2rem;
+		text-align: center;
+	}
+
+	&__heading {
+		margin: 2rem 0;
+	}
+
+	&__texto {
+		color: v.$blanco;
+	}
+
+	&__etiqueta {
+		font-weight: 700;
+	}
+}

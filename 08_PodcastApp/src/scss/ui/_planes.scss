@@ -1,0 +1,95 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.planes {
+	background-color: v.$secundario;
+
+	@include m.tablet {
+		padding-bottom: 13rem;
+	}
+
+	&__titulo {
+		@include m.titulo-linea(v.$blanco, v.$primario);
+	}
+
+	&__texto {
+		color: v.$blanco;
+	}
+
+	&__grupo {
+		display: flex;
+		flex-direction: column;
+
+		@include m.tablet {
+			flex-direction: row;
+			max-width: 80rem;
+			margin: 10rem auto 0 auto;
+		}
+	}
+}
+
+.plan {
+	flex-grow: 1;
+	background-color: v.$blanco;
+	padding: 16rem 4rem 4rem;
+	border-bottom: 0.1rem solid #e1e1e1;
+
+	@include m.tablet {
+		border: none;
+		transition: transform 300ms ease-in-out;
+		padding: 16rem 2.5rem 4rem;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	@include m.desktop {
+		padding: 16rem 4rem 4rem;
+	}
+
+	&__precio {
+		font-size: 1.8rem;
+		text-align: center;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	&__lista {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	&.inicio {
+		@include m.bg-icono("../img/icono_inicio.svg");
+
+		@include m.tablet {
+			border-top-left-radius: 1rem;
+			border-bottom-left-radius: 1rem;
+		}
+	}
+
+	&.negocio {
+		@include m.bg-icono("../img/icono_negocio.svg");
+		background-color: v.$primario;
+		order: -1;
+
+		@include m.tablet {
+			order: unset;
+			margin: -5rem 0;
+			border-radius: 1.5rem;
+			background-position: 50% 8rem;
+			padding-top: calc((16rem + 5rem));
+			z-index: 10;
+		}
+	}
+
+	&.pro {
+		@include m.bg-icono("../img/icono_pro.svg");
+
+		@include m.tablet {
+			border-top-right-radius: 1rem;
+			border-bottom-right-radius: 1rem;
+		}
+	}
+}

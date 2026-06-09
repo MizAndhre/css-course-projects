@@ -1,0 +1,8 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.estadisticas {
+	&__titulo {
+		@include m.titulo-linea(v.$secundario, v.$primario);
+	}
+}
